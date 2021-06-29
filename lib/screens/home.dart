@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:telsoft_flutter/screens/utils/widget/bottom_bar.dart';
 import 'package:telsoft_flutter/screens/utils/widget/button_gridview.dart';
+import 'package:telsoft_flutter/screens/utils/widget/button_stack.dart';
 
 class Home extends StatefulWidget {
   static const routeNmae = "/home";
@@ -39,7 +40,7 @@ class HomeState extends State<Home> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomLeft,
                   colors: [
-                    Colors.yellow.shade50,
+                    Colors.yellow.shade100,
                     Colors.white,
                     Colors.white,
                     Colors.white
@@ -276,37 +277,45 @@ class HomeState extends State<Home> {
         physics: NeverScrollableScrollPhysics(),
         children: [
           buttonGrid(
-              text: "Voucher",
-              image: "assets/images/ic_service_voucher.png",
-              action: () {}),
+            text: "Voucher",
+            image: "assets/images/ic_service_voucher.png",
+            action: () {},
+          ),
           buttonGrid(
-              text: "Vinhomes",
-              image: "assets/images/ic_service_my_house.png",
-              action: () {}),
+            text: "Vinhomes",
+            image: "assets/images/ic_service_my_house.png",
+            action: () {},
+          ),
           buttonGrid(
-              text: "Săn thưởng",
-              image: "assets/images/ic_service_game.png",
-              action: () {}),
+            text: "Săn thưởng",
+            image: "assets/images/ic_service_game.png",
+            action: () {},
+          ),
           buttonGrid(
-              text: "Tiện ích",
-              image: "assets/images/ic_service_utility_payment.png",
-              action: () {}),
+            text: "Tiện ích",
+            image: "assets/images/ic_service_utility_payment.png",
+            action: () {},
+          ),
           buttonGrid(
-              text: "VinMart",
-              image: "assets/images/ic_function_vinmart.png",
-              action: () {}),
+            text: "VinMart",
+            image: "assets/images/ic_function_vinmart.png",
+            action: () {},
+          ),
           buttonGrid(
-              text: "Đi chợ",
-              image: "assets/images/ic_function_maket.png",
-              action: () {}),
+            text: "Đi chợ",
+            image: "assets/images/ic_function_maket.png",
+            action: () {},
+          ),
           buttonGrid(
-              text: "Đồ ăn",
-              image: "assets/images/ic_function_food.png",
-              action: () {}),
-          buttonGrid(
-              text: "Techcom",
-              image: "assets/images/ic_function_tech.png",
-              action: () {}),
+            text: "Đồ ăn",
+            image: "assets/images/ic_function_food.png",
+            action: () {},
+          ),
+          buttonStack(
+            text: "Techcom",
+            image: "assets/images/ic_function_tech.png",
+            action: () {},
+          ),
         ],
       ),
     );
