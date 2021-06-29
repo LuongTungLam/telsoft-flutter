@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:telsoft_flutter/screens/utils/widget/bottom_bar.dart';
 import 'package:telsoft_flutter/screens/utils/widget/button_gridview.dart';
@@ -36,13 +38,19 @@ class HomeState extends State<Home> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomLeft,
-                  colors: [Colors.pink.shade50, Colors.white, Colors.white],
+                  colors: [
+                    Colors.yellow.shade50,
+                    Colors.white,
+                    Colors.white,
+                    Colors.white
+                  ],
                 ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   search(),
+                  banner(),
                   top(),
                   gridTop(),
                   dividerCenter(),
@@ -94,7 +102,7 @@ class HomeState extends State<Home> {
                 border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.all(Radius.circular(50.0))),
-                hintText: 'Nhập số điện thoại',
+                hintText: 'Bạn đang muốn tìm ...',
               ),
             ),
           ),
@@ -119,6 +127,47 @@ class HomeState extends State<Home> {
     );
   }
 
+  Widget banner() {
+    return Container(
+      padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+      child: Row(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 220),
+                child: Container(
+                  child: Text(
+                    "Chung tay cùng VinID xây trường mới",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Tham gia ngay",
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+              ),
+            ],
+          ),
+          Spacer(),
+          Container(
+              width: 140,
+              height: 140,
+              child: Image.asset(
+                "assets/images/kids.png",
+                fit: BoxFit.cover,
+              )),
+        ],
+      ),
+    );
+  }
+
   Widget top() {
     return Container(
       padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
@@ -129,6 +178,7 @@ class HomeState extends State<Home> {
               height: 70,
               decoration: BoxDecoration(
                 color: Colors.white,
+                border: Border.all(color: Colors.grey.shade200),
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               child: Row(
@@ -173,6 +223,7 @@ class HomeState extends State<Home> {
               height: 70,
               decoration: BoxDecoration(
                 color: Colors.white,
+                border: Border.all(color: Colors.grey.shade200),
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               child: Row(
